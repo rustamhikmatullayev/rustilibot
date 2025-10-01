@@ -27,7 +27,7 @@ from telegram.ext import (
 # ----- Load env -----
 load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # for Whisper transcription
+OPENAI_API_KEY = "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"
 BASE_URL = os.getenv("BASE_URL", "").rstrip("/")
 DB_PATH = os.getenv("DB_PATH", "bot.db")
 LESSONS_PER_LEVEL = int(os.getenv("LESSONS_PER_LEVEL", "25"))
@@ -176,7 +176,7 @@ async def send_lesson_for_user(app, user_id):
         # fallback sample text if remote missing (to keep bot usable)
         text_content = f"[{level_folder} - {idx}] (matn mavjud emas. Admin faylni joylang.)"
 
-    caption = f"Daraja: {level_folder.upper()} — so'z #{idx}\n\nMatn:\n{html.escape(text_content)}\n\nIltimos, audio eshiting va so'zni takrorlab, ovozli xabar yuboring."
+    caption = f"Daraja: {level_folder.upper()} — so'z #{idx}\n\nMatn:\n{(text_content)}\n\nIltimos, audio eshiting va so'zni takrorlab, ovozli xabar yuboring."
     # send audio (URL if available), otherwise notify
     try:
         if audio_url:
@@ -490,4 +490,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
