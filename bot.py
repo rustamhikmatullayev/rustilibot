@@ -288,7 +288,7 @@ async def menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "menu:vocab":
         # try to fetch a vocab file, else show sample 10 words
         sample = [
-            "привет — salom1",
+            "привет — salom",
             "спасибо — rahmat",
             "пожалуйста — iltimos",
             "до свидания — xayr",
@@ -490,3 +490,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
